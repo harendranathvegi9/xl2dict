@@ -3,7 +3,7 @@ __author__ = 'ashwin'
 
 """
 
-from distutils.core import setup
+from setuptools import setup
 from codecs import open
 from os import path
 
@@ -15,7 +15,7 @@ with open(path.join(projectpath, 'README.rst')) as f:
 
 setup(
     name='xl2dict',
-    version='0.1.0',
+    version='0.1.1',
     description='Spreadsheet to dictionary converter and data explorer',
     long_description=long_description,
     url='https://github.com/gettalent/xl2dict',
@@ -36,6 +36,5 @@ setup(
 
     packages=['xl2dict'],
 
-    install_requires=['openpyxl','xlrd'],
-
+    install_requires=['openpyxl','xlrd']
 )

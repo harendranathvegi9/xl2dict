@@ -84,7 +84,7 @@ class XlToDict():
             sheet = workbook.sheet_by_name(sheet_name)
         else:
             sheet = workbook.sheet_by_index(0)
-        return self.convert_sheet_to_dict(sheet, filter_variables_dict)
+        return self.convert_sheet_to_dict(sheet=sheet, filter_variables_dict=filter_variables_dict)
 
     def fetch_data_by_column_by_sheet_index(self, file_name, filter_variables_dict=None, sheet_index=0):
         """
@@ -104,7 +104,7 @@ class XlToDict():
         """
         workbook = open_workbook(filename=file_name)
         sheet = workbook.sheet_by_index(sheet_index)
-        return self.convert_sheet_to_dict(sheet, filter_variables_dict)
+        return self.convert_sheet_to_dict(sheet=sheet, filter_variables_dict=filter_variables_dict)
 
     def fetch_data_by_column_by_sheet_name_multiple(self, file_name, filter_variables_dict=None, sheet_names=None):
         """
@@ -127,7 +127,7 @@ class XlToDict():
             print sheet_names
         for sheet_name in sheet_names:
             sheet = workbook.sheet_by_name(sheet_name)
-            resultdictlist.extend(self.convert_sheet_to_dict(sheet, filter_variables_dict))
+            resultdictlist.extend(self.convert_sheet_to_dict(sheet=sheet, filter_variables_dict=filter_variables_dict))
         return resultdictlist
 
     def fetch_data_by_column_by_sheet_index_multiple(self, file_name, filter_variables_dict=None,
@@ -151,7 +151,7 @@ class XlToDict():
             sheet_indices = range(0, workbook.nsheets)
         for sheet_index in sheet_indices:
             sheet = workbook.sheet_by_index(sheet_index)
-            resultdictlist.extend(self.convert_sheet_to_dict(sheet, filter_variables_dict))
+            resultdictlist.extend(self.convert_sheet_to_dict(sheet=sheet, filter_variables_dict=filter_variables_dict))
         return resultdictlist
 
     def fetch_matching_data_row_indices(self, file_name, filter_variables_dict, sheet_name_index=0):
